@@ -18,6 +18,10 @@ export const Search = () => {
         console.log('→ filteredCountries', filteredCountries);
     };
 
+    useEffect(() => {
+        getCountries();
+    });
+
     return (
         <section className = 'strange-search'>
             <span className = 'strange'>Странный</span>
