@@ -18,6 +18,8 @@ export const Search = () => {
             <input
                 placeholder = 'Страна или континент'
                 type = 'text'
+                value = { filter }
+                onChange = { (event) => setFilter(event.target.value) }
             />
             <span className = 'search'>поиск</span>
             <ul>
