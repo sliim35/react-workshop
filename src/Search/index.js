@@ -45,7 +45,12 @@ export const Search = () => {
 
         return (
             <li key = { country.emoji }>
-                <span className = 'country' />
+                <span
+                    className = 'country'
+                    dangerouslySetInnerHTML = {{
+                        __html: `${name}, ${continent}`,
+                    }}
+                />
                 <span className = 'flag'>{country.emoji}</span>
             </li>
         );
