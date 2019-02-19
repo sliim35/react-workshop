@@ -63,6 +63,7 @@ export const Search = () => {
 
     const debouncedFilter = useDebounce(filter);
     useEffect(() => {
+        console.log(debouncedFilter );
         getCountries();
     }, [ debouncedFilter ]);
 
