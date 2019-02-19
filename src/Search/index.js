@@ -32,7 +32,17 @@ export const Search = () => {
      * 2. Годится для временных рамок формата воркшоп
      */
     const regexp = new RegExp(filter, 'g');
-    const countriesJSX = [];
+    const countriesJSX = countries.map((country) => {
+        const name = country.name.replace(
+            regexp,
+            `<span class='highlight'>${filter}</span>`
+        )
+
+        return (
+
+        )
+
+    })
 
     useEffect(() => {
         getCountries();
