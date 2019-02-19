@@ -12,10 +12,13 @@ export const Search = () => {
 
     const [ filter, setFilter ] = useState('');
     const [ countries, setCountries ] = useState([]);
+    const [ isFetching, setIsFetching ] = useState(false);
 
     const getCountries = async () => {
+        setIsFetching(true);
         const filteredCountries = await api.getCountries(filter.trim());
         setCountries(filteredCountries);
+        setIsFetching(false);
     };
 
     console.log('→ countries', countries);
