@@ -14,7 +14,7 @@ export const Search = () => {
     const [ countries, setCountries ] = useState([]);
 
     const getCountries = async () => {
-        const filteredCountries = await api.getCountries(filter);
+        const filteredCountries = await api.getCountries(filter.trim());
         setCountries(filteredCountries);
     };
 
