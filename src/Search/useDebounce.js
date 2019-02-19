@@ -18,7 +18,13 @@ export const useDebounce = (value, delay) => {
             setDebouncedValue(value);
         }, delay);
 
+        /**
+         * По правилам работы с хуками — обязательно делаем очистку таймера в useEffect.
+         */
         return () => {
+            /**
+             * При каждом выполнении useEffect может возвращать функцию-очистку.
+             */
             clearInterval(timer);
         };
     }, [ value ]);
