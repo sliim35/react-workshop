@@ -32,6 +32,9 @@ export const Search = () => {
             <span className = 'strange'>Странный</span>
             <input
                 placeholder = 'Страна или континент'
+                style = {{
+                    '--inputBorderStyle': isFetching ? 'dashed' : 'solid',
+                }}
                 type = 'text'
                 value = { filter }
                 onChange = { (event) => setFilter(event.target.value) }
