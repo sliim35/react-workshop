@@ -35,14 +35,21 @@ export const Search = () => {
     const countriesJSX = countries.map((country) => {
         const name = country.name.replace(
             regexp,
-            `<span class='highlight'>${filter}</span>`
-        )
+            `<span class='highlight'>${filter}</span>`,
+        );
+
+        const continent = country.continent.replace(
+            regexp,
+            `<span class='highlight'>${filter}</span>`,
+        );
 
         return (
-
-        )
-
-    })
+            <li key = { country.emoji }>
+                <span className = 'country' />
+                <span className = 'flag'>{country.emoji}</span>
+            </li>
+        );
+    });
 
     useEffect(() => {
         getCountries();
