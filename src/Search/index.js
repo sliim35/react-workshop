@@ -6,6 +6,9 @@ import './styles.css';
 import { api } from '../API';
 import { delay } from '../instruments';
 
+// Hooks
+import { useDebounce } from './useDebounce';
+
 // ↓ render()
 export const Search = () => {
     // 1. ✓ input контроллируемым
