@@ -15,14 +15,14 @@ export const Search = () => {
 
     const getCountries = async () => {
         const filteredCountries = await api.getCountries(filter);
-        // setCountries(filteredCountries);
+        setCountries(filteredCountries);
     };
 
     console.log('→ countries', countries);
 
     useEffect(() => {
         getCountries();
-    });
+    }, [ filter ]);
 
     return (
         <section className = 'strange-search'>
