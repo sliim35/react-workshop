@@ -1,5 +1,5 @@
 // Core
-import React from 'react';
+import React, { useState } from 'react';
 
 // Instruments
 import './styles.css';
@@ -7,6 +7,11 @@ import './styles.css';
 export const Search = () => {
     // 1. input контроллируемым
     // 2. высылать запрос к серверу
+
+    const [ filter, setFilter ] = useState('');
+
+    console.log('→ filter', filter);
+
     return (
         <section className = 'strange-search'>
             <span className = 'strange'>Странный</span>
