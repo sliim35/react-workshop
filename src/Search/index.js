@@ -25,7 +25,9 @@ export const Search = () => {
         setIsFetching(false);
     };
 
-    console.log('→ countries', countries);
+    /**
+     * dangerouslySetInnerHtml — ❌
+     */
 
     useEffect(() => {
         getCountries();
