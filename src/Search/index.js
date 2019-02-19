@@ -11,12 +11,14 @@ export const Search = () => {
     // 2. высылать запрос к серверу
 
     const [ filter, setFilter ] = useState('');
+    const [ countries, setCountries ] = useState([]);
 
     const getCountries = async () => {
         const filteredCountries = await api.getCountries(filter);
-
-        console.log('→ filteredCountries', filteredCountries);
+        setCountries(filteredCountries);
     };
+
+    console.log('→ countries', countries);
 
     useEffect(() => {
         getCountries();
