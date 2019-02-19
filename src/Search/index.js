@@ -61,9 +61,10 @@ export const Search = () => {
         );
     });
 
+    const debouncedFilter = useDebounce(filter);
     useEffect(() => {
         getCountries();
-    }, [ filter ]);
+    }, [ debouncedFilter ]);
 
     return (
         <section className = 'strange-search'>
