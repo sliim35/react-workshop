@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 // Instruments
 import './styles.css';
 
+// ↓ render()
 export const Search = () => {
     // 1. input контроллируемым
     // 2. высылать запрос к серверу
