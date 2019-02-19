@@ -25,6 +25,8 @@ export const Search = () => {
         setIsFetching(false);
     };
 
+    // debounce
+
     /**
      * dangerouslySetInnerHtml — ❌
      * dangerouslySetInnerHtml — ✅
