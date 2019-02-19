@@ -61,7 +61,7 @@ export const Search = () => {
         );
     });
 
-    const debouncedFilter = useDebounce(filter);
+    const debouncedFilter = useDebounce(filter, 200);
     useEffect(() => {
         console.log(debouncedFilter);
         getCountries();
