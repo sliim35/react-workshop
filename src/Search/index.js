@@ -31,6 +31,8 @@ export const Search = () => {
      * 1. Рассмотрим юзкейс
      * 2. Годится для временных рамок формата воркшоп
      */
+    const regexp = new RegExp(filter, 'g');
+    const countriesJSX = [];
 
     useEffect(() => {
         getCountries();
@@ -49,9 +51,7 @@ export const Search = () => {
                 onChange = { (event) => setFilter(event.target.value) }
             />
             <span className = 'search'>поиск</span>
-            <ul>
-                <li>hello</li>
-            </ul>
+            <ul>{countriesJSX}</ul>
             <b />
         </section>
     );
