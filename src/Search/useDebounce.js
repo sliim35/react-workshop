@@ -11,6 +11,9 @@ export const useDebounce = (value, delay) => {
     const [ debouncedValue, setDebouncedValue ] = useState(value);
 
     useEffect(() => {
+        /**
+         * Обновлять debounced-значение спустя определённое время
+         */
         const timer = setTimeout(() => {
             setDebouncedValue(value);
         }, delay);
