@@ -27,6 +27,9 @@ export const Search = () => {
 
     /**
      * dangerouslySetInnerHtml — ❌
+     * dangerouslySetInnerHtml — ✅
+     * 1. Рассмотрим юзкейс
+     * 2. Годится для временных рамок формата воркшоп
      */
 
     useEffect(() => {
