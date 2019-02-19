@@ -25,7 +25,7 @@ export const useDebounce = (value, delay) => {
             /**
              * При каждом выполнении useEffect может возвращать функцию-очистку.
              */
-            clearInterval(timer);
+            clearTimeout(timer);
         };
     }, [ value ]);
 
