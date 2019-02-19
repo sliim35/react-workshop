@@ -13,6 +13,7 @@ export const Search = () => {
                 type = 'text'
             />
             <span className = 'search'>поиск</span>
+            <b />
         </section>
     );
 };
