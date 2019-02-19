@@ -7,7 +7,8 @@ import './styles.css';
 export const Search = () => {
     return (
         <section className = 'strange-search'>
-            <h1 className = 'strange'>Поехали!!!</h1>
+            <span className = 'strange'>Странный</span>
+            <span className = 'search'>поиск</span>
         </section>
     );
 };
