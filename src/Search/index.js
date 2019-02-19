@@ -11,7 +11,7 @@ export const Search = () => {
     // 1. input контроллируемым
     // 2. высылать запрос к серверу
     // 3. получаем страны
-    // 4. вывести их на экран
+    // 4. вывести результат на экран
 
     const [ filter, setFilter ] = useState('');
     const [ countries, setCountries ] = useState([]);
