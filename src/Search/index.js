@@ -5,6 +5,8 @@ import React from 'react';
 import './styles.css';
 
 export const Search = () => {
+    // 1. input контроллируемым
+    // 2. высылать запрос к серверу
     return (
         <section className = 'strange-search'>
             <span className = 'strange'>Странный</span>
