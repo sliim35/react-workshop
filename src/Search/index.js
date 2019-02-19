@@ -1,8 +1,9 @@
 // Core
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Instruments
 import './styles.css';
+import { api } from '../API';
 
 // ↓ render()
 export const Search = () => {
@@ -11,7 +12,11 @@ export const Search = () => {
 
     const [ filter, setFilter ] = useState('');
 
-    console.log('→ filter', filter);
+    const getCountries = async () => {
+        const filteredCountries = await api.getCountries(filter);
+
+        console.log('→ filteredCountries', filteredCountries);
+    };
 
     return (
         <section className = 'strange-search'>
