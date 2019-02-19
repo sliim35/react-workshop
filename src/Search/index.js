@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 // Instruments
 import './styles.css';
 import { api } from '../API';
-import { delay } from '../instruments'
+import { delay } from '../instruments';
 
 // ↓ render()
 export const Search = () => {
