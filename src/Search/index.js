@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 // Instruments
 import './styles.css';
 import { api } from '../API';
+import { delay } from '../instruments'
 
 // ↓ render()
 export const Search = () => {
@@ -17,6 +18,7 @@ export const Search = () => {
     const getCountries = async () => {
         setIsFetching(true);
         const filteredCountries = await api.getCountries(filter.trim());
+        await delay(200);
         setCountries(filteredCountries);
         setIsFetching(false);
     };
