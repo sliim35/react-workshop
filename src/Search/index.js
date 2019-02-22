@@ -1,6 +1,8 @@
 // Core
 import React, { useState, useEffect } from 'react';
 
+import { Modal } from '../Modal';
+
 // Instruments
 import './styles.css';
 import { api } from '../API';
@@ -19,6 +21,8 @@ export const Search = () => {
     const [ filter, setFilter ] = useState('');
     const [ countries, setCountries ] = useState([]);
     const [ isFetching, setIsFetching ] = useState(false);
+    const [ isModalOpen, setModalOpen ] = useState(false);
+    const [ country, setSelectedCountry ] = useState({});
 
     const getCountries = async () => {
         setIsFetching(true);
@@ -26,6 +30,16 @@ export const Search = () => {
         await delay(200);
         setCountries(filteredCountries);
         setIsFetching(false);
+    };
+
+    const getCountry = (country) => {
+        setFilter(country.name);
+        setSelectedCountry(country);
+        setModalOpen(true);
+    };
+
+    const onClose = () => {
+        setModalOpen(false);
     };
 
     // debounce
@@ -36,20 +50,22 @@ export const Search = () => {
      * 1. Рассмотрим юзкейс
      * 2. Годится для временных рамок формата воркшоп
      */
-    const regexp = new RegExp(filter, 'g');
+    const regexp = new RegExp(filter, 'gi');
     const countriesJSX = countries.map((country) => {
         const name = country.name.replace(
             regexp,
             `<span class='highlight'>${filter}</span>`,
-        );
+        ).toLowerCase();
 
         const continent = country.continent.replace(
             regexp,
             `<span class='highlight'>${filter}</span>`,
-        );
+        ).toLowerCase();
 
         return (
-            <li key = { country.emoji }>
+            <li
+                key = { country.emoji }
+                onClick = { () => getCountry(country) }>
                 <span
                     className = 'country'
                     dangerouslySetInnerHTML = {{
@@ -63,7 +79,6 @@ export const Search = () => {
 
     const debouncedFilter = useDebounce(filter, 200);
     useEffect(() => {
-        console.log(debouncedFilter);
         getCountries();
     }, [ debouncedFilter ]);
 
@@ -82,6 +97,13 @@ export const Search = () => {
             <span className = 'search'>поиск</span>
             <ul>{countriesJSX}</ul>
             <b />
+            {isModalOpen && (
+                <Modal
+                    country = { country }
+                    onClose = { onClose }
+                />
+            )
+            }
         </section>
     );
 };

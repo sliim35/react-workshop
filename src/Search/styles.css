@@ -403,3 +403,11 @@
         }
     }
 }
+
+.country {
+    text-transform: capitalize;
+}
+
+.country::first-letter {
+    text-transform: uppercase;
+}
